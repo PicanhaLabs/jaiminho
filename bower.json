@@ -1,0 +1,21 @@
+{
+	"name": "jaiminho",
+	"version": "0.0.2",
+	"homepage": "https://github.com/PicanhaLabs/jaiminho",
+	"authors": [
+		"Picanha Labs <grill@picanhalabs.com>"
+	],
+	"description": "Event Manager",
+	"moduleType": [
+		"globals",
+		"node"
+	],
+	"keywords": [
+		"event",
+		"javascript",
+		"node",
+		"browser",
+		"jaiminho"
+	],
+	"license": "MIT"
+}
