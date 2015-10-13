@@ -27,19 +27,19 @@
 			listeners[i].call(undefined, params);
 	}
 
-	function addListener (moduleName, eventName, fn) {
+	function addListener(moduleName, eventName, fn) {
 		var listeners	= getListeners(moduleName, eventName);
 
 		listeners.push(fn);
 	}
 
-	function removeAllListeners (moduleName, eventName) {
+	function removeAllListeners(moduleName, eventName) {
 		var listeners	= getListeners(moduleName, eventName);
 
 		listeners = [];
 	}
 
-	function removeListener (moduleName, eventName, fn) {
+	function removeListener(moduleName, eventName, fn) {
 		var listeners	= getListeners(moduleName, eventName);
 
 		listeners = listeners.filter(function(el) {
