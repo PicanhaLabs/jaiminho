@@ -16,7 +16,9 @@ bower install jaiminho
 
 ## Use
 
-Just import **dist/jaiminho.min.js** in your html or node.
+Just import **dist/jaiminho.min.js** in your html.
+
+You can also import via AMD or CommonJS.
 
 ### Add Listener
 
