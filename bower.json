@@ -17,5 +17,9 @@
 		"browser",
 		"jaiminho"
 	],
+	"ignore": [
+		"src",
+		"Gruntfile.js"
+	],
 	"license": "MIT"
 }
