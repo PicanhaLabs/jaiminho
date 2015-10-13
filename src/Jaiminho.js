@@ -1,6 +1,22 @@
-(function() {
-	var isCommonJS	= typeof module !== 'undefined' && module.exports,
-		modules		= {},
+'use strict';
+
+(function(root, jaiminho) {
+	/*
+	**	UMD BLOCK
+	*/	
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define([], jaiminho);
+	} else if (typeof exports === 'object') {
+		// Node, CommonJS-like
+		module.exports = jaiminho();
+	} else {
+		// Browser globals (root is window)
+		root.Jaiminho = jaiminho();
+	}
+}(window, function() {
+
+	var modules		= {},
 		instance;
 
 	function trigger(moduleName, eventName, params) {
@@ -9,7 +25,7 @@
 			i			= 0;
 
 		for(; i < len; i++)
-			listeners[i].call(undefined, params);
+			listenerlistenerlistenersslistenerss[i].call(undefined, params);
 	}
 
 	function addListener (moduleName, eventName, fn) {
@@ -64,8 +80,6 @@
 		getListeners		: getListeners;
 	};
 
-	if (isCommonJS)
-		module.exports	= instance;
-	else
-		self.Jaiminho	= instance;
-})();
+
+	return instance;
+}));
