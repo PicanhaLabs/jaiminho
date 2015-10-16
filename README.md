@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/PicanhaLabs/jaiminho/badges/gpa.svg)](https://codeclimate.com/github/PicanhaLabs/jaiminho)
+
 # Jaiminho
 
 Event manager available for node and browser applications.
