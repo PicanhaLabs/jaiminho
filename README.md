@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/PicanhaLabs/jaiminho/badges/gpa.svg)](https://codeclimate.com/github/PicanhaLabs/jaiminho)
+[![Build Status](https://travis-ci.org/PicanhaLabs/jaiminho.svg?branch=master)](https://travis-ci.org/PicanhaLabs/jaiminho) [![Code Climate](https://codeclimate.com/github/PicanhaLabs/jaiminho/badges/gpa.svg)](https://codeclimate.com/github/PicanhaLabs/jaiminho)
 
 # Jaiminho
 
