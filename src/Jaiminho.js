@@ -16,70 +16,63 @@
 	}
 }(window, function() {
 
-	var modules		= {},
-		instance;
+	var modules		= {}
 
-	function trigger(moduleName, eventName, params) {
-		var listeners	= getListeners(moduleName, eventName),
+	function Jaiminho(){}
+
+	Jaiminho.prototype.modules = {};
+
+	Jaiminho.prototype.trigger(moduleName, eventName, params) {
+		var listeners	= this.getListeners(moduleName, eventName),
 			len			= listeners.length,
 			i			= 0;
 
 		for(; i < len; i++)
-			listenerlistenerlistenersslistenerss[i].call(undefined, params);
+			listeners[i].call(undefined, params);
 	}
 
-	function addListener (moduleName, eventName, fn) {
-		var listeners	= getListeners(moduleName, eventName);
+	Jaiminho.prototype.addListener (moduleName, eventName, fn) {
+		var listeners	= this.getListeners(moduleName, eventName);
 
 		listeners.push(fn);
 	}
 
-	function removeAllListeners (moduleName, eventName) {
-		var listeners	= getListeners(moduleName, eventName);
+	Jaiminho.prototype.removeAllListeners (moduleName, eventName) {
+		var listeners	= this.getListeners(moduleName, eventName);
 
 		listeners = [];
 	}
 
-	function removeListener (moduleName, eventName, fn) {
-		var listeners	= getListeners(moduleName, eventName);
+	Jaiminho.prototype.removeListener (moduleName, eventName, fn) {
+		var listeners	= this.getListeners(moduleName, eventName);
 
 		listeners = listeners.filter(function(el) {
 			return el.toString() !== fn.toString();
 		});
 	}
 
-	function getListeners(moduleName, eventName) {
-		var evt = getEvent(moduleName, eventName);
+	Jaiminho.prototype.getListeners(moduleName, eventName) {
+		var evt = this.getEvent(moduleName, eventName);
 
 		return evt.listeners;
 	}
 
-	function getEvent(moduleName, eventName) {
-		__ensuresExistence(moduleName, eventName);
+	Jaiminho.prototype.getEvent(moduleName, eventName) {
+		this.__ensuresExistence(moduleName, eventName);
 
-		return modules[moduleName][eventName];
+		return this.modules[moduleName][eventName];
 	}
 
-	function __ensuresExistence(moduleName, eventName) {
-		if (!modules.hasOwnProperty(moduleName))
-			modules[moduleName] = {};
+	Jaiminho.prototype.__ensuresExistence(moduleName, eventName) {
+		if (!this.modules.hasOwnProperty(moduleName))
+			this.modules[moduleName] = {};
 
-		if (!modules[moduleName].hasOwnProperty(eventName)) {
-			modules[moduleName][eventName] = {
+		if (!this.modules[moduleName].hasOwnProperty(eventName)) {
+			this.modules[moduleName][eventName] = {
 				listeners : []
 			};
 		}
 	}
 
-	instance = {
-		trigger				: trigger;
-		addListener			: addListener;
-		removeListener		: removeListener;
-		removeAllListeners	: removeAllListeners;
-		getEvent			: getEvent;
-		getListeners		: getListeners;
-	};
-
-
-	return instance;
+	return Jaiminho;
 }));
