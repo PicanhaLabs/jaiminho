@@ -1,17 +1,17 @@
 {
 	"name": "jaiminho",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Event Manager",
 	"author": "Picanha Labs",
-	"license": "MIT",
+	"license": "GPL3",
 	"devDependencies": {
+		"chai": "^3.2.0",
 		"grunt": "^0.4.5",
 		"grunt-contrib-uglify": "^0.9.2",
-		"load-grunt-tasks": "^3.2.0",
-		"time-grunt": "^1.2.1",
-		"chai": "^3.2.0",
 		"istanbul": "^0.3.17",
-		"mocha": "^2.2.5"
+		"load-grunt-tasks": "^3.2.0",
+		"mocha": "^2.2.5",
+		"time-grunt": "^1.2.1"
 	},
 	"scripts": {
 		"test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
