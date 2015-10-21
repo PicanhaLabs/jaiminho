@@ -1,12 +1,13 @@
 'use strict';
 
 (function(root, jaiminho) {
+	console.log(jaiminho)
 	/*
 	**	UMD BLOCK
 	*/	
 	if (typeof define === 'function' && define.amd) {
 		// AMD
-		define([], jaiminho);
+		define([], jaiminho());
 	} else if (typeof exports === 'object') {
 		// Node, CommonJS-like
 		module.exports = jaiminho();
@@ -16,7 +17,7 @@
 	}
 }(typeof window !== 'undefined' ? window : {}, function() {
 
-	var modules		= {};
+	var modules		= {},
 		unique;
 
 	function Jaiminho() {}
@@ -30,26 +31,35 @@
 
 		for(; i < len; i++)
 			listeners[i].call(undefined, params);
+
+		return listeners.length;
 	};
 
 	Jaiminho.prototype.addListener = function (moduleName, eventName, fn) {
-		var listeners	= this.getListeners(moduleName, eventName);
+		var evt	= this.getEvent(moduleName, eventName);
 
-		listeners.push(fn);
+		evt.listeners.push(fn);
+
+		return evt.listeners.length;
 	};
 
 	Jaiminho.prototype.removeAllListeners = function (moduleName, eventName) {
-		var listeners	= this.getListeners(moduleName, eventName);
+		var evt			= this.getEvent(moduleName, eventName);
 
-		listeners = [];
+		evt.listeners = [];
+
+		return evt.listeners.length;
 	};
 
 	Jaiminho.prototype.removeListener = function (moduleName, eventName, fn) {
-		var listeners	= this.getListeners(moduleName, eventName);
+		var evt			= this.getEvent(moduleName, eventName),
+			listeners	= evt.listeners;
 
-		listeners = listeners.filter(function(el) {
+		evt.listeners = listeners.filter(function(el) {
 			return el.toString() !== fn.toString();
 		});
+
+		return evt.listeners.length;
 	};
 
 	Jaiminho.prototype.getListeners = function(moduleName, eventName) {
@@ -75,11 +85,7 @@
 		}
 	};
 
-	jaiminho = new Jaiminho();
+	//jaiminho = new Jaiminho();
 
-	return function(newinstance) {
-		if (newinstance)
-			return new Jaiminho();
-		return jaiminho;
-	};
+	return Jaiminho;
 }));
