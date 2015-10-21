@@ -16,9 +16,10 @@
 	}
 }(typeof window !== 'undefined' ? window : {}, function() {
 
-	var modules		= {}
+	var modules		= {};
+		unique;
 
-	function Jaiminho(){}
+	function Jaiminho() {}
 
 	Jaiminho.prototype.modules = {};
 
@@ -74,5 +75,11 @@
 		}
 	};
 
-	return Jaiminho;
+	jaiminho = new Jaiminho();
+
+	return function(newinstance) {
+		if (newinstance)
+			return new Jaiminho();
+		return jaiminho;
+	};
 }));
