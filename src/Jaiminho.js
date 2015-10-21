@@ -1,7 +1,6 @@
 'use strict';
 
 (function(root, jaiminho) {
-	console.log(jaiminho)
 	/*
 	**	UMD BLOCK
 	*/	
@@ -16,9 +15,6 @@
 		root.Jaiminho = jaiminho();
 	}
 }(typeof window !== 'undefined' ? window : {}, function() {
-
-	var modules		= {},
-		unique;
 
 	function Jaiminho() {}
 
@@ -84,8 +80,6 @@
 			};
 		}
 	};
-
-	//jaiminho = new Jaiminho();
 
 	return Jaiminho;
 }));
