@@ -1,6 +1,6 @@
 {
 	"name": "jaiminho",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"homepage": "https://github.com/PicanhaLabs/jaiminho",
 	"authors": [
 		"Picanha Labs <grill@picanhalabs.com>"
@@ -19,7 +19,11 @@
 	],
 	"ignore": [
 		"src",
-		"Gruntfile.js"
+		"Gruntfile.js",
+		"coverage",
+		"node_modules"m
+		"test",
+		".travis.yml"
 	],
-	"license": "MIT"
+	"license": "GPL3"
 }
