@@ -22,6 +22,12 @@ Just import **dist/jaiminho.min.js** in your html.
 
 You can also import via AMD or CommonJS.
 
+Create a Jaiminho instance:
+
+```
+var J = new Jaiminho();
+```
+
 ### Add Listener
 
 ```
@@ -29,12 +35,12 @@ function listener(arg) {
 	// your implementation
 }
 
-Jaiminho.addListener('ModuleName', 'EventName', listener);
+J.addListener('ModuleName', 'EventName', listener);
 ```
 
 ### Trigger Event
 ```
-Jaiminho.trigger('ModuleName', 'EventName', {
+J.trigger('ModuleName', 'EventName', {
 	param1: 'foo',
 	param2: 'bar'
 });
@@ -45,7 +51,7 @@ OR
 
 
 ```
-Jaiminho.trigger('ModuleName', 'EventName');
+J.trigger('ModuleName', 'EventName');
 ```
 
 ### Remove Listener
@@ -55,23 +61,23 @@ function listener(arg) {
 	// your implementation
 }
 
-Jaiminho.removeListener('ModuleName', 'EventName', listener);
+J.removeListener('ModuleName', 'EventName', listener);
 ```
 
 ### Remove All Listeners
 
 ```
-Jaiminho.removeAllListeners('ModuleName', 'EventName');
+J.removeAllListeners('ModuleName', 'EventName');
 ```
 
 ### Get Listeners
 
 ```
-Jaiminho.getListeners('ModuleName', 'EventName');
+J.getListeners('ModuleName', 'EventName');
 ```
 
 ### Get Event
 
 ```
-Jaiminho.getEvent('ModuleName', 'EventName');
+J.getEvent('ModuleName', 'EventName');
 ```
