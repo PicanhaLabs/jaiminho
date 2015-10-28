@@ -21,7 +21,7 @@
 		"src",
 		"Gruntfile.js",
 		"coverage",
-		"node_modules"m
+		"node_modules",
 		"test",
 		".travis.yml"
 	],
