@@ -4,12 +4,13 @@
 	/*
 	**	UMD BLOCK
 	*/	
-	if (typeof define === 'function' && define.amd) {
-		// AMD
-		define([], jaiminho());
-	} else if (typeof exports === 'object') {
+	if (typeof exports === 'object') {
 		// Node, CommonJS-like
 		module.exports = jaiminho();
+	} else if (typeof define === 'function' && define.amd) {
+		// AMD
+		var def = define;
+		def.call(root, [[], jaiminho()]);
 	} else {
 		// Browser globals (root is window)
 		root.Jaiminho = jaiminho();
