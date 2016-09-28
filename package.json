@@ -1,6 +1,6 @@
 {
 	"name": "jaiminho",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Event Manager",
 	"author": "Picanha Labs",
 	"license": "GPL3",
@@ -15,5 +15,6 @@
 	},
 	"scripts": {
 		"test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
-	}
+	},
+	"main": "dist/jaiminho.min.js"
 }
